@@ -1,5 +1,6 @@
 import Accordion from "@/components/accordion/Accordion";
 import Accordion2 from "@/components/accordion/Accordion2";
+import SliderWithPicsum from "@/components/image-slider/SliderWithPicsum";
 import RandomColor from "@/components/random-color/RandomColor";
 import StarRating from "@/components/star-rating/StarRating";
 import { Inter } from "next/font/google";
@@ -13,7 +14,9 @@ export default function Home() {
 
       {/* <RandomColor /> */}
 
-      <StarRating noOfStars={10}/>
+      {/* <StarRating noOfStars={10}/> */}
+
+      <SliderWithPicsum  url={'https://picsum.photos/v2/list'} limit={'4'}/>
 
      
     </div>
