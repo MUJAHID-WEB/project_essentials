@@ -4,6 +4,7 @@ import SliderWithPicsum from "@/components/image-slider/SliderWithPicsum";
 import LoadMore from "@/components/load-more/LoadMore";
 import RandomColor from "@/components/random-color/RandomColor";
 import StarRating from "@/components/star-rating/StarRating";
+import Table from "@/components/table/Table";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,7 +20,9 @@ export default function Home() {
 
       {/* <SliderWithPicsum  url={'https://picsum.photos/v2/list'} limit={'4'}/> */}
 
-      <LoadMore />
+      {/* <LoadMore /> */}
+
+    <Table />
 
      
     </div>
