@@ -43,12 +43,26 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Divider, Rating } from "@mui/material";
+
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import styled from "@emotion/styled";
 
 function Forms() {
-  const [value, setValue] = useState(0);
   const [open, setOpen] = useState(false);
   const courses = ["React", "Next", "Javascript"];
   const [progress, setProgress] = useState(0);
+  const [value, setValue] = useState<number | undefined>(undefined);
+  const StyledRating = styled(Rating)({
+    "& .MuiRating-iconFilled": {
+      color: "#ff6d75",
+    },
+    "& .MuiRating-iconHover": {
+      color: "#ff3d47",
+    },
+  });
+  
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -358,6 +372,19 @@ function Forms() {
             </AccordionDetails>
           </Accordion>
         </div>
+        <div>
+              <Rating value={value} onChange={(e, val) => setValue(val || 0)} />
+              <Typography>
+                Rated {value !== undefined ? value : 0} Stars
+              </Typography>
+
+              <StyledRating
+                precision={0.5}
+                icon={<FavoriteIcon fontSize="inherit" />}
+                emptyIcon={<FavoriteBorderIcon />}
+              />
+            </div>
+
       </div>
     </div>
   );
